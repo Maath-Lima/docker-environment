@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumer", "Consumer", "{5FA1C74C-1936-4C34-854D-854743B61CE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{7315DA69-09A0-4FB1-82D5-A7717C59FDE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{70BDC395-5C0E-4B9A-AB2B-47883109AF02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Environment.Commands.API", "src\Docker.Environment.Commands.API\Docker.Environment.Commands.API.csproj", "{28A89697-794C-4B67-9061-DCF41365CA89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Environment.Data.Database", "src\Docker.Environment.Data.Database\Docker.Environment.Data.Database.csproj", "{54286380-3978-4F3D-A280-C720BE03E8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Environment.Data.Models", "src\Docker.Environment.Data.Models\Docker.Environment.Data.Models.csproj", "{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28A89697-794C-4B67-9061-DCF41365CA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A89697-794C-4B67-9061-DCF41365CA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A89697-794C-4B67-9061-DCF41365CA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A89697-794C-4B67-9061-DCF41365CA89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54286380-3978-4F3D-A280-C720BE03E8AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54286380-3978-4F3D-A280-C720BE03E8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54286380-3978-4F3D-A280-C720BE03E8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54286380-3978-4F3D-A280-C720BE03E8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28A89697-794C-4B67-9061-DCF41365CA89} = {7315DA69-09A0-4FB1-82D5-A7717C59FDE7}
+		{54286380-3978-4F3D-A280-C720BE03E8AF} = {70BDC395-5C0E-4B9A-AB2B-47883109AF02}
+		{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856} = {70BDC395-5C0E-4B9A-AB2B-47883109AF02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D53F041-04C6-4BFD-A085-1E8ED8D87754}
+	EndGlobalSection
+EndGlobal
