@@ -16,6 +16,28 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+--
+-- Name: DockerEnvironmentDB; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "DockerEnvironmentDB" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Portuguese_Brazil.1252';
+
+
+ALTER DATABASE "DockerEnvironmentDB" OWNER TO postgres;
+
+\connect "DockerEnvironmentDB"
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -95,6 +117,9 @@ ALTER TABLE public."__EFMigrationsHistory" OWNER TO postgres;
 
 COPY public."Categorias" ("CategoriaId", "Nome", "Descricao") FROM stdin;
 13	Livro	To read your dumb!!
+14	Test	To test!!
+15	Test	To test!!
+16	Test 1	To test!!
 \.
 
 
@@ -119,7 +144,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 -- Name: Categorias_CategoriaId_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Categorias_CategoriaId_seq"', 13, true);
+SELECT pg_catalog.setval('public."Categorias_CategoriaId_seq"', 16, true);
 
 
 --

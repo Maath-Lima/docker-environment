@@ -3,7 +3,9 @@ using Docker.Environment.Data.Database;
 using Docker.Environment.Data.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.PostgresConfigureDbContext(builder.Configuration);
-
 var app = builder.Build();
 
 app.UseHttpsRedirection();

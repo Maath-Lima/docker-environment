@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.Environment.Data.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.Environment.Data.Models", "src\Docker.Environment.Data.Models\Docker.Environment.Data.Models.csproj", "{7FEB1B5A-CEA0-4742-8BCA-0FE74BBDC856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Environment.Consumer.API", "src\Docker.Environment.Consumer.API\Docker.Environment.Consumer.API.csproj", "{1B9A974E-B066-442A-944A-78012428A835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.Environment.Consumer.API", "src\Docker.Environment.Consumer.API\Docker.Environment.Consumer.API.csproj", "{1B9A974E-B066-442A-944A-78012428A835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
