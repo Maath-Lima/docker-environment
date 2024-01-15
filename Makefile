@@ -11,7 +11,7 @@ DOCKERCONTEXT_DATA_DIR:= data/
 docker-build-all:
 	docker build -t data-docker-environment:latest -f ${DOCKERFILE_DATA_DIR} ${DOCKERCONTEXT_DATA_DIR}
 
-	# docker build -t commands-docker-environment:latest -f ${DOCKERFILE_COMMANDS_DIR} ${DOCKERCONTEXT_COMMANDS_DIR}
+	docker build -t commands-docker-environment:latest -f ${DOCKERFILE_COMMANDS_DIR} ${DOCKERCONTEXT_COMMANDS_DIR}
 
 	docker build -t consumer-docker-environment:latest -f ${DOCKERFILE_CONSUMER_DIR} ${DOCKERCONTEXT_CONSUMER_DIR}
 
@@ -38,6 +38,14 @@ docker-run-all:
 	--name consumer \
 	--network my-network \
 	-p 5000:80 \
+	-e ASPNETCORE_ENVIRONMENT=Docker \
+	--restart unless-stopped \
+	consumer-docker-environment:latest
+
+	docker run -d \
+	--name commands \
+	--network my-network \
+	-p 5003:80 \
 	-e ASPNETCORE_ENVIRONMENT=Docker \
 	--restart unless-stopped \
 	consumer-docker-environment:latest
