@@ -27,7 +27,7 @@ docker-run-all:
 	docker run -d \
 	--network my-network \
 	-p 5432:5432 \
-	--name docker-db \
+	--name docker-db \	
 	-v pgdata:/var/lib/postgresql/data \
 	-e POSTGRES_PASSWORD=postgres \
 	-e POSTGRES_USER=postgres \
@@ -48,7 +48,7 @@ docker-run-all:
 	-p 5003:80 \
 	-e ASPNETCORE_ENVIRONMENT=Docker \
 	--restart unless-stopped \
-	consumer-docker-environment:latest
+	commands-docker-environment:latest
 
 .PHONY: docker-stop
 docker-stop:

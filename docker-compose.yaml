@@ -1,0 +1,52 @@
+name: docker-environment
+services:
+    data-docker-environment:
+        image: data-docker-environment:latest
+        build:
+            context: data
+            dockerfile: Dockerfile
+        container_name: docker-db
+        networks:
+            - my-network
+        ports:
+            - 5432:5432
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+        restart: unless-stopped
+    consumer-docker-environment:
+        image: consumer-docker-environment:latest
+        build:
+            context: src
+            dockerfile: Docker.Environment.Consumer.API/Dockerfile
+        container_name: consumer
+        depends_on:
+            - data-docker-environment
+        networks:
+            - my-network
+        ports:
+            - 8080:80
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+        restart: unless-stopped
+    commands-docker-environment:
+        image: commands-docker-environment:latest
+        build:
+            context: src
+            dockerfile: Docker.Environment.Commands.API/Dockerfile
+        container_name: commands
+        depends_on:
+            - data-docker-environment
+        networks:
+            - my-network
+        ports:
+            - 8081:80
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+        restart: unless-stopped
+networks:
+    my-network:
+volumes:
+    pgdata:
