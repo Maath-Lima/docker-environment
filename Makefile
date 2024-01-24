@@ -54,9 +54,23 @@ docker-run-all:
 docker-stop:
 	-docker stop docker-db
 	-docker stop consumer
+	-docker stop commands
 
 .PHONY: docker-rm
 docker-rm:
 	-docker container rm docker-db
 	-docker container rm consumer
+	-docker container rm commands
 	-docker network rm my-network
+
+.PHONY: docker-rmi
+docker-rmi:
+	-docker rmi data-docker-environment
+	-docker rmi consumer-docker-environment
+	-docker rmi commands-docker-environment
+
+.PHONY: docker-rm-all
+docker-rm-all:
+	$(MAKE) docker-stop
+	$(MAKE) docker-rm
+	$(MAKE) docker-rmi
