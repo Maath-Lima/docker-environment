@@ -21,6 +21,14 @@ services:
         build:
             context: src
             dockerfile: Docker.Environment.Consumer.API/Docker/DEV/Dockerfile
+        volumes:
+            - ./src:/src
+            - /src/Docker.Environment.Consumer.API/obj/
+            - /src/Docker.Environment.Consumer.API/bin/
+            - /src/Docker.Environment.Data.Database/obj/
+            - /src/Docker.Environment.Data.Database/bin/
+            - /src/Docker.Environment.Data.Models/obj/
+            - /src/Docker.Environment.Data.Models/bin/
         container_name: consumer
         depends_on:
             - data-docker-environment
