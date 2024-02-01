@@ -12,4 +12,4 @@ RUN dotnet restore "Docker.Environment.Consumer.API.csproj"
 
 COPY . .
 
-CMD ["dotnet", "watch", "run", "--project" , "Docker.Environment.Consumer.API/Docker.Environment.Consumer.API.csproj",  "--urls", "https://*:443;http://*:80"]
+CMD ["dotnet", "watch", "run", "--environment=Docker", "--project" , "Docker.Environment.Consumer.API/Docker.Environment.Consumer.API.csproj",  "--urls", "https://*:443;http://*:80"]

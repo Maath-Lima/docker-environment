@@ -37,7 +37,6 @@ services:
         ports:
             - 5000:80
             - 5001:443
-        command: ["dotnet", "watch", "run", "--environment=Docker", "--project" , "Docker.Environment.Consumer.API/Docker.Environment.Consumer.API.csproj",  "--urls", "https://*:443;http://*:80"]
         restart: unless-stopped
     commands-docker-environment:
         image: commands-docker-environment:latest
